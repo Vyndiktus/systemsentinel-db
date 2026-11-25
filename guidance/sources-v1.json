@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "defensive-reference-catalog",
+  "reviewed_on": "2026-11-25",
+  "sources": [
+    {"id":"debian-security", "publisher":"Debian", "category":"vendor-advisories", "scope":"debian", "url":"https://www.debian.org/security/", "intended_use":"Review Debian security maintenance guidance and distribution-supported patches.", "verification":"direct"},
+    {"id":"ubuntu-security", "publisher":"Canonical", "category":"vendor-advisories", "scope":"ubuntu", "url":"https://ubuntu.com/security/notices", "intended_use":"Review Canonical security notices and supported update instructions.", "verification":"direct"},
+    {"id":"ubuntu-automatic-updates", "publisher":"Canonical", "category":"mitigation-guidance", "scope":"ubuntu", "url":"https://documentation.ubuntu.com/security/security-updates/", "intended_use":"Review supported security update and automatic maintenance practices.", "verification":"direct"},
+    {"id":"cisa-kev", "publisher":"CISA", "category":"threat-context", "scope":"general", "url":"https://www.cisa.gov/known-exploited-vulnerabilities-catalog", "intended_use":"Consult the official catalog when reviewing an organization's remediation priorities.", "verification":"official-reference"},
+    {"id":"cert-eu-publications", "publisher":"CERT-EU", "category":"threat-context", "scope":"general", "url":"https://www.cert.europa.eu/publications", "intended_use":"Review public defensive cyber briefings, advisories and mitigation guidance.", "verification":"direct"},
+    {"id":"cert-eu-guidance", "publisher":"CERT-EU", "category":"mitigation-guidance", "scope":"general", "url":"https://cert.europa.eu/publications/security-guidance/", "intended_use":"Consult published cybersecurity mitigation guidance and defensive recommendations.", "verification":"direct"}
+  ]
+}

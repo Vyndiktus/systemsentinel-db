@@ -31,3 +31,11 @@ python3 tools/validate_lifecycle.py maintenance/lifecycle-v1.json
 ```
 
 The existing advisory snapshot remains fictional. Lifecycle data must not be imported as an advisory snapshot.
+
+## Defensive threat and mitigation references
+
+The [defensive reference catalog](guidance/sources-v1.json) is a reviewed directory of official vendor advisories, general threat context and mitigation resources. It stores source-level links and intended defensive uses; it does not mirror exploit inventories or assert exploitation status for individual packages. The `official-reference` verification state means an official publisher document confirms the URL, but direct access could not be verified during this review.
+
+```sh
+python3 tools/validate_guidance.py guidance/sources-v1.json
+```

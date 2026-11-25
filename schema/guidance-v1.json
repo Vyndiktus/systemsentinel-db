@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SystemSentinel defensive reference catalog",
+  "type":"object", "additionalProperties":false,
+  "required":["schema_version","kind","reviewed_on","sources"],
+  "properties":{
+    "schema_version":{"const":1},
+    "kind":{"const":"defensive-reference-catalog"},
+    "reviewed_on":{"type":"string","format":"date"},
+    "sources":{"type":"array","minItems":1,"items":{
+      "type":"object","additionalProperties":false,
+      "required":["id","publisher","category","scope","url","intended_use","verification"],
+      "properties":{
+        "id":{"type":"string","pattern":"^[a-z0-9]+(-[a-z0-9]+)*$"},
+        "publisher":{"type":"string","minLength":1},
+        "category":{"enum":["vendor-advisories","mitigation-guidance","threat-context"]},
+        "scope":{"enum":["debian","ubuntu","general"]},
+        "url":{"type":"string","format":"uri"},
+        "intended_use":{"type":"string","minLength":1},
+        "verification":{"enum":["direct","official-reference"]}
+      }
+    }}
+  }
+}
