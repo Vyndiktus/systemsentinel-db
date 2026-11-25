@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SystemSentinel vendor maintenance snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "synthetic", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "synthetic": {"type": "boolean"},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["distribution", "release", "package", "fixed_version", "advisory", "reference"],
+        "properties": {
+          "distribution": {"enum": ["debian", "ubuntu"]},
+          "release": {"type": "string", "minLength": 1},
+          "package": {"type": "string", "pattern": "^[a-z0-9][a-z0-9+.-]+$"},
+          "fixed_version": {"type": "string", "minLength": 1},
+          "advisory": {"type": "string", "minLength": 1},
+          "reference": {"type": "string", "format": "uri"}
+        }
+      }
+    }
+  }
+}
