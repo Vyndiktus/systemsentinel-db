@@ -13,3 +13,5 @@ A SHA-256 digest can accompany the snapshot for corruption detection; the digest
 A snapshot only covers records it contains; no matches do not establish that the host is secure.
 
 License: MIT (schema and tooling; vendor feed licensing must be reviewed before redistribution).
+
+For governing sources and submission requirements, see [SOURCES.md](SOURCES.md). The validation workflow checks snapshot structure, duplicate keys, versions, and vendor reference domains before review.
