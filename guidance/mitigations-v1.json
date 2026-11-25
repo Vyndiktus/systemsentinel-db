@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "defensive-threat-mitigations",
+  "reviewed_on": "2026-11-25",
+  "records": [
+    {
+      "id": "patch-maintenance",
+      "category": "Unpatched software",
+      "assessment": "local_update_review",
+      "mitigation": "Review available vendor security updates, apply them through the supported distribution package manager, and verify installation using your normal change-management process.",
+      "source": "https://csrc.nist.gov/pubs/sp/800/40/r4/final"
+    },
+    {
+      "id": "repository-freshness",
+      "category": "Incomplete update information",
+      "assessment": "local_index_review",
+      "mitigation": "Refresh security update information using the distribution's package manager before relying on update results; investigate inaccessible or expired repositories.",
+      "source": "https://documentation.ubuntu.com/security/security-updates/"
+    },
+    {
+      "id": "release-maintenance",
+      "category": "Unsupported operating system",
+      "assessment": "local_lifecycle_review",
+      "mitigation": "Verify that the operating system, architecture, and relevant packages remain supported; plan a supported release upgrade or establish applicable extended maintenance.",
+      "source": "https://csrc.nist.gov/pubs/sp/800/40/r4/final"
+    },
+    {
+      "id": "credential-protection",
+      "category": "Credential compromise",
+      "assessment": "manual_review",
+      "mitigation": "Prefer phishing-resistant multifactor authentication for administrative access and review identity-management controls.",
+      "source": "https://www.cisa.gov/sites/default/files/2023-03/CISA_CPG_REPORT_v1.0.1_FINAL.pdf"
+    },
+    {
+      "id": "backup-recovery",
+      "category": "Ransomware and data loss",
+      "assessment": "manual_review",
+      "mitigation": "Maintain protected, offline backup copies and test restoration procedures regularly.",
+      "source": "https://www.cisa.gov/sites/default/files/publications/CISA_MS-ISAC_Ransomware%20Guide_S508C.pdf"
+    }
+  ]
+}

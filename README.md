@@ -39,3 +39,9 @@ The [defensive reference catalog](guidance/sources-v1.json) is a reviewed direct
 ```sh
 python3 tools/validate_guidance.py guidance/sources-v1.json
 ```
+
+## Defensive threat mitigation catalog
+
+The [mitigation dataset](guidance/mitigations-v1.json) contains reviewed threat categories and defensive actions, linked to NIST, CISA, and distribution guidance. Assessment types identify whether an application can review local maintenance evidence or whether a user must review the control manually. These records do not establish the presence of a particular vulnerability, exploitation, or compromise.
+
+Validate using `python3 tools/validate_mitigations.py guidance/mitigations-v1.json`.
