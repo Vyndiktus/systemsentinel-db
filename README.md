@@ -19,3 +19,15 @@ For governing sources and submission requirements, see [SOURCES.md](SOURCES.md).
 ## Distribution preview
 
 The development-preview release contains `snapshot.json` (fictional test data) and a separate SHA-256 checksum. The application accepts a named GitHub release and a trusted digest for explicit local import. It does not download or run scripts from the database.
+
+## Real maintenance lifecycle data
+
+The [vendor maintenance lifecycle dataset](maintenance/lifecycle-v1.json) is a separate, real-data catalog of seven Debian and Ubuntu releases, with standard and extended maintenance boundaries and official references. Its purpose is to guide upgrade planning, not determine whether individual packages are vulnerable. Date precision follows the source (month or day); coverage may vary with architecture, package and subscription. The catalog is manually reviewed and dated, not an exhaustive real-time feed.
+
+Validate it with:
+
+```sh
+python3 tools/validate_lifecycle.py maintenance/lifecycle-v1.json
+```
+
+The existing advisory snapshot remains fictional. Lifecycle data must not be imported as an advisory snapshot.

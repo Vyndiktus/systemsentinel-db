@@ -9,3 +9,4 @@ jobs:
       - uses: actions/checkout@v7.0.1
       - run: python3 -m unittest discover -s tests -v
       - run: python3 tools/validate_snapshot.py examples/synthetic.json
+      - run: python3 tools/validate_lifecycle.py maintenance/lifecycle-v1.json

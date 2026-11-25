@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SystemSentinel vendor maintenance lifecycle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "kind", "reviewed_on", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "vendor-maintenance-lifecycle"},
+    "reviewed_on": {"type": "string", "format": "date"},
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["distribution", "release", "standard_until", "extended_until", "extended_program", "source", "guidance"],
+        "properties": {
+          "distribution": {"enum": ["debian", "ubuntu"]},
+          "release": {"type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$"},
+          "standard_until": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}(-[0-9]{2})?$"},
+          "extended_until": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}(-[0-9]{2})?$"},
+          "extended_program": {"type": "string", "minLength": 1},
+          "source": {"type": "string", "format": "uri"},
+          "guidance": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}
