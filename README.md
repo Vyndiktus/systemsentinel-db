@@ -15,3 +15,7 @@ A snapshot only covers records it contains; no matches do not establish that the
 License: MIT (schema and tooling; vendor feed licensing must be reviewed before redistribution).
 
 For governing sources and submission requirements, see [SOURCES.md](SOURCES.md). The validation workflow checks snapshot structure, duplicate keys, versions, and vendor reference domains before review.
+
+## Distribution preview
+
+The development-preview release contains `snapshot.json` (fictional test data) and a separate SHA-256 checksum. The application accepts a named GitHub release and a trusted digest for explicit local import. It does not download or run scripts from the database.
